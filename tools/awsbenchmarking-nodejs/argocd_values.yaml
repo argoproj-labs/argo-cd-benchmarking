@@ -1,0 +1,38 @@
+global:
+  image:
+    tag: "v2.8.0-rc5"
+
+dex:
+  enabled: false # Disable dex since we are not using
+
+controller:
+  metrics:
+    enabled: true
+    service:
+      annotations:
+        prometheus.io/scrape: true
+
+repoServer:
+  metrics:
+    enabled: true
+    service:
+      annotations:
+        prometheus.io/scrape: true
+
+applicationSet:
+  metrics:
+    enabled: true
+    service:
+      annotations:
+        prometheus.io/scrape: true
+
+server:
+  metrics:
+    enabled: true
+    service:
+      annotations:
+        prometheus.io/scrape: true
+  service:
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+    type: "LoadBalancer"
