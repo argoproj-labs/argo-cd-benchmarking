@@ -1,0 +1,17 @@
+workflow:
+  serviceAccount:
+    create: true
+    name: "argo-workflow"
+  rbac:
+    create: true
+controller:
+  workflowNamespaces:
+    - default
+    - argocd
+  metricsConfig:
+    enabled: true
+server:
+  serviceType: LoadBalancer
+  serviceAnnotations: {
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+  }

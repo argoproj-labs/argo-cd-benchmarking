@@ -11,5 +11,8 @@
     "url": "git@ssh.gitlab.aws.dev:andklee/argocdbenchmarking.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dos2unix": "^1.1.2"
+  }
 }

@@ -1,7 +1,7 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: argocd-application-controller-metrics
+  name: argocd-metrics
   labels:
     release: prometheus-operator
 spec:
@@ -33,7 +33,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: argocd-repo-server-metrics
+      app.kubernetes.io/name: argocd-repo-server
   endpoints:
   - port: http-metrics
 ---
