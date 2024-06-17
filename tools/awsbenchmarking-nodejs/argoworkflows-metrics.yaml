@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: workflow-controller
+  name: workflow-controller-metrics
+  annotations:
+    prometheus.io/scrape: "true"
+spec:
+  ports:
+  - name: metrics
+    port: 9090
+    protocol: TCP
+    targetPort: 9090
+  selector:
+    app: workflow-controller
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: argo-workflows
+  labels:
+    release: prometheus-operator
+spec:
+  endpoints:
+  - port: metrics
+  selector:
+    matchLabels:
+      app: workflow-controller

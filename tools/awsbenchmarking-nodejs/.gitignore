@@ -1,3 +1,7 @@
 accounts*
 argocd-cm.json
 argocd-cmd-params-cm.json
+argoworkflows-argo-workflows-workflow-controller*
+shardingtests
+node_modules
+temp
